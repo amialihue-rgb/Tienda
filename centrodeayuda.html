@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="3style.css">
+</head>
+<body>
+    <div id="" class="contenido-oculto">
+<div id="ayuda" class="contenido-oculto">
+    <h2>Mi Centro de ayuda</h2>
+    <p>¿Quieres optener mas infromacion sobre nosotros?</p>
+    <p>Somo una familia que quiere irse de vacaciones y necesita dinero 
+    con tu ayuda de pedir cuando quieras nosotros te lo llevamos no 
+    te olivides de seguirnos en nuestras redes sociales en instagram y whastApp 
+    o simplemente llama al numero de telefono y eso</p>
+   
+   <div id="ayuda" class="contenido-oculto">
+
+        <h2>Centro de ayuda</h2>
+
+        <p>
+            ¿Querés obtener más información sobre nosotros?
+        </p>
+
+        <p>
+            Somos una familia que quiere irse de vacaciones y necesita
+            ayuda para organizar todo. Podés comunicarte con nosotros
+            por nuestras redes sociales o mediante nuestro número de teléfono.
+        </p>
+
+        <h3>Preguntas frecuentes</h3>
+
+        <div class="pregunta">
+            <button type="button" class="boton-pregunta">
+                ¿Cómo puedo contactarlos?
+            </button>
+
+            <div class="respuesta">
+                <p>
+                    Podés comunicarte con nosotros mediante WhatsApp,
+                    Instagram o completando el formulario de contacto.
+                </p>
+            </div>
+        </div>
+
+        <div class="pregunta">
+            <button type="button" class="boton-pregunta">
+                ¿Cómo puedo pedir ayuda?
+            </button>
+
+            <div class="respuesta">
+                <p>
+                    Simplemente contanos qué necesitás y nos pondremos
+                    en contacto con vos para ayudarte.
+                </p>
+            </div>
+        </div>
+
+        <div class="pregunta">
+            <button type="button" class="boton-pregunta">
+                ¿Dónde puedo consultar los horarios?
+            </button>
+
+            <div class="respuesta">
+                <p>
+                    Podés consultar nuestros horarios y ubicación
+                    desde la sección correspondiente de la página.
+                </p>
+            </div>
+        </div>
+
+        <h3>¿Necesitás más ayuda?</h3>
+
+        <button type="button" id="mostrarFormulario">
+            Contactarnos
+        </button>
+
+        <div id="formularioAyuda" style="display: none;">
+
+            <h3>Formulario de ayuda</h3>
+
+            <form id="formAyuda">
+
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" required>
+
+                <br><br>
+
+                <label for="correo">Correo electrónico:</label>
+                <input type="email" id="correo" required>
+
+                <br><br>
+
+                <label for="mensaje">¿En qué podemos ayudarte?</label>
+                <br>
+                <textarea id="mensaje" rows="5" required></textarea>
+
+                <br><br>
+
+                <button type="submit">Enviar consulta</button>
+
+            </form>
+
+            <p id="mensajeEnviado"></p>
+
+        </div>
+
+    </div>
+
+
+    <script>
+
+        // Preguntas frecuentes
+        const botonesPregunta =
+            document.querySelectorAll(".boton-pregunta");
+
+        botonesPregunta.forEach(function(boton) {
+
+            boton.addEventListener("click", function() {
+
+                const respuesta =
+                    boton.nextElementSibling;
+
+                if (respuesta.style.display === "block") {
+
+                    respuesta.style.display = "none";
+
+                } else {
+
+                    respuesta.style.display = "block";
+
+                }
+
+            });
+
+        });
+
+
+        // Mostrar formulario
+        const botonFormulario =
+            document.getElementById("mostrarFormulario");
+
+        const formulario =
+            document.getElementById("formularioAyuda");
+
+        botonFormulario.addEventListener("click", function() {
+
+            if (formulario.style.display === "none") {
+
+                formulario.style.display = "block";
+                botonFormulario.textContent = "Ocultar formulario";
+
+            } else {
+
+                formulario.style.display = "none";
+                botonFormulario.textContent = "Contactarnos";
+
+            }
+
+        });
+
+
+        // Enviar formulario
+        const form =
+            document.getElementById("formAyuda");
+
+        const mensajeEnviado =
+            document.getElementById("mensajeEnviado");
+
+        form.addEventListener("submit", function(event) {
+
+            event.preventDefault();
+
+            mensajeEnviado.textContent =
+                "¡Consulta enviada correctamente! Nos pondremos en contacto con vos.";
+
+            form.reset();
+
+        });
+
+    </script>
+
+</body>
+
+
+
+ <body>
+
+</div>
