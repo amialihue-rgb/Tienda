@@ -1,0 +1,914 @@
+/* =========================================
+   PORTFOLIO DE MÍA
+========================================= */
+
+
+/* =========================================
+   CONFIGURACIÓN GENERAL
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+
+    background: #3c379b;
+
+    color: #f4f4f5;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================
+   BARRA DE NAVEGACIÓN
+========================================= */
+
+.navbar {
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    height: 72px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 0 7%;
+
+    background: rgba(14, 14, 18, 0.92);
+
+    backdrop-filter: blur(12px);
+
+    border-bottom: 1px solid #292930;
+
+    z-index: 1000;
+}
+
+
+/* LOGO */
+
+.logo {
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-size: 1.5rem;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+.logo span {
+
+    color: #a970ff;
+
+}
+
+
+/* MENÚ */
+
+.navbar nav {
+
+    display: flex;
+
+    gap: 10px;
+
+}
+
+.navbar nav a {
+
+    color: #cfcfd6;
+
+    text-decoration: none;
+
+    padding: 9px 13px;
+
+    border-radius: 20px;
+
+    transition: 0.3s;
+
+}
+
+.navbar nav a:hover {
+
+    color: #ffffff;
+
+    background: #25252d;
+
+}
+
+
+/* =========================================
+   SECCIONES
+========================================= */
+
+.seccion {
+
+    min-height: 100vh;
+
+    padding: 120px 8% 70px;
+
+    display: flex;
+
+    align-items: center;
+}
+
+
+/*
+   IMPORTANTE:
+
+   Al principio todas las secciones están ocultas.
+   Solo Inicio aparece.
+*/
+
+.seccion {
+
+    display: none;
+
+}
+
+
+/* INICIO */
+
+#inicio {
+
+    display: flex;
+
+}
+
+
+/*
+   Cuando hacemos clic en un botón del menú,
+   solamente aparece la sección seleccionada.
+*/
+
+#inicio:target,
+#sobre-mi:target,
+#proyectos:target,
+#habilidades:target,
+#contacto:target {
+
+    display: flex;
+
+}
+
+
+/*
+   Si la página se abre sin #,
+   se muestra Inicio.
+*/
+
+body:not(:has(.seccion:target)) #inicio {
+
+    display: flex;
+
+}
+
+
+/* =========================================
+   INICIO / HERO
+========================================= */
+
+.hero {
+
+    max-width: 1400px;
+
+    margin: auto;
+
+    width: 100%;
+
+    justify-content: space-between;
+
+    gap: 60px;
+
+}
+
+.hero-text {
+
+    max-width: 650px;
+
+}
+
+
+/* PEQUEÑO TÍTULO */
+
+.etiqueta {
+
+    color: #a970ff;
+
+    font-size: 0.8rem;
+
+    font-weight: bold;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 15px;
+
+}
+
+
+/* TÍTULO PRINCIPAL */
+
+h1 {
+
+    font-size: clamp(3rem, 8vw, 6rem);
+
+    line-height: 0.95;
+
+    margin-bottom: 20px;
+
+}
+
+h1 span {
+
+    color: #a970ff;
+
+}
+
+
+/* TÍTULOS */
+
+h2 {
+
+    font-size: clamp(2rem, 4vw, 3.3rem);
+
+    margin-bottom: 20px;
+
+}
+
+
+/* SUBTÍTULO DEL INICIO */
+
+.hero-text h2 {
+
+    color: #d6d6dc;
+
+    font-size: 1.35rem;
+
+    font-weight: 400;
+
+}
+
+
+/* TEXTO */
+
+.hero-text p:not(.etiqueta) {
+
+    color: #a9a9b2;
+
+    max-width: 580px;
+
+    margin-bottom: 30px;
+
+}
+
+
+/* =========================================
+   IMAGEN DE PORTADA
+========================================= */
+
+.hero-image {
+
+    width: min(430px, 90vw);
+
+}
+
+.hero-image img {
+
+    width: 100%;
+
+    aspect-ratio: 4 / 5;
+
+    object-fit: cover;
+
+    border-radius: 30px;
+
+    border: 1px solid #666694;
+
+    box-shadow:
+        0 25px 80px rgba(0, 0, 0, 0.55);
+
+}
+
+
+/* =========================================
+   BOTONES
+========================================= */
+
+.botones {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 12px;
+
+}
+
+.boton {
+
+    display: inline-block;
+
+    color: #ffffff;
+
+    background: #a970ff;
+
+    text-decoration: none;
+
+    padding: 13px 22px;
+
+    border-radius: 30px;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+
+}
+
+.boton:hover {
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 10px 30px rgba(169, 112, 255, 0.25);
+
+}
+
+
+/* BOTÓN SECUNDARIO */
+
+.boton.secundario {
+
+    background: transparent;
+
+    border: 1px solid #3b3b45;
+
+}
+
+
+/* =========================================
+   CONTENIDO GENERAL
+========================================= */
+
+.contenido {
+
+    width: 100%;
+
+    max-width: 1150px;
+
+    margin: auto;
+
+}
+
+.contenido > h2 {
+
+    margin-bottom: 35px;
+
+}
+
+
+/* =========================================
+   SOBRE MÍ
+========================================= */
+
+.tarjeta {
+
+    background: #17171d;
+
+    border: 1px solid #2b2b34;
+
+    border-radius: 25px;
+
+    padding: 35px;
+
+}
+
+.tarjeta p {
+
+    color: #bdbdc5;
+
+    margin-bottom: 18px;
+
+}
+
+.tarjeta p:last-child {
+
+    margin-bottom: 0;
+
+}
+
+
+/* =========================================
+   PROYECTOS
+========================================= */
+
+.proyectos {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+
+}
+
+
+/* TARJETA DE PROYECTO */
+
+.proyecto {
+
+    background: #17171d;
+
+    border: 1px solid #2b2b34;
+
+    border-radius: 24px;
+
+    padding: 28px;
+
+    transition: 0.3s;
+
+}
+
+.proyecto:hover {
+
+    transform: translateY(-8px);
+
+    border-color: #a970ff;
+
+}
+
+
+/* NÚMERO */
+
+.numero {
+
+    color: #a970ff;
+
+    font-size: 0.9rem;
+
+    font-weight: bold;
+
+    margin-bottom: 18px;
+
+}
+
+
+/* TÍTULO */
+
+.proyecto h3 {
+
+    font-size: 1.4rem;
+
+    margin-bottom: 12px;
+
+}
+
+
+/* DESCRIPCIÓN */
+
+.proyecto p {
+
+    color: #a9a9b2;
+
+    margin-bottom: 22px;
+
+}
+
+
+/* =========================================
+   ETIQUETAS DE TECNOLOGÍAS
+========================================= */
+
+.tags {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 7px;
+
+    margin-bottom: 25px;
+
+}
+
+.tags span {
+
+    background: #29252f;
+
+    color: #c99dff;
+
+    border: 1px solid #40364b;
+
+    padding: 5px 10px;
+
+    border-radius: 20px;
+
+    font-size: 0.75rem;
+
+}
+
+
+/* LINK DEL PROYECTO */
+
+.link {
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+}
+
+.link:hover {
+
+    color: #a970ff;
+
+}
+
+
+/* =========================================
+   HABILIDADES
+========================================= */
+
+.habilidades {
+
+    max-width: 850px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 25px 45px;
+
+}
+
+
+/* NOMBRE */
+
+.habilidad > span {
+
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-weight: bold;
+
+}
+
+
+/* BARRA */
+
+.barra {
+
+    width: 100%;
+
+    height: 8px;
+
+    background: #582dcf;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+}
+
+
+/* NIVEL */
+
+.nivel {
+
+    height: 100%;
+
+    background: #a970ff;
+
+    border-radius: 20px;
+
+}
+
+
+/* PORCENTAJES */
+
+.nivel.html {
+
+    width: 90%;
+
+}
+
+.nivel.css {
+
+    width: 85%;
+
+}
+
+.nivel.js {
+
+    width: 70%;
+
+}
+
+.nivel.php {
+
+    width: 65%;
+
+}
+
+.nivel.mysql {
+
+    width: 65%;
+
+}
+
+.nivel.python {
+
+    width: 60%;
+
+}
+
+
+/* =========================================
+   CONTACTO
+========================================= */
+
+.contacto {
+
+    display: grid;
+
+    grid-template-columns:
+        0.8fr 1.2fr;
+
+    gap: 70px;
+
+    align-items: start;
+
+}
+
+
+/* TEXTO */
+
+.contacto > div:first-child p:last-child {
+
+    color: #a9a9b2;
+
+}
+
+
+/* FORMULARIO */
+
+form {
+
+    background: #5858e2;
+
+    border: 1px solid #381661;
+
+    border-radius: 25px;
+
+    padding: 30px;
+
+}
+
+
+/* LABELS */
+
+label {
+
+    display: block;
+
+    color: #dcdce1;
+
+    font-size: 0.9rem;
+
+    margin-bottom: 7px;
+
+}
+
+
+/* CAMPOS */
+
+input,
+textarea {
+
+    width: 100%;
+
+    background: #394abd;
+
+    border: 1px solid #34343d;
+
+    color: #ffffff;
+
+    border-radius: 12px;
+
+    padding: 13px;
+
+    margin-bottom: 20px;
+
+    font-family: inherit;
+
+    outline: none;
+
+}
+
+
+/* CAMPOS AL SELECCIONAR */
+
+input:focus,
+textarea:focus {
+
+    border-color: #a970ff;
+
+}
+
+
+/* TEXTAREA */
+
+textarea {
+
+    resize: vertical;
+
+}
+
+
+/* BOTÓN DEL FORMULARIO */
+
+button {
+
+    width: 100%;
+
+    border: none;
+
+    background: #a970ff;
+
+    color: #ffffff;
+
+    padding: 14px;
+
+    border-radius: 12px;
+
+    font-size: 1rem;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+}
+
+button:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 30px rgb(178, 126, 255);
+
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer {
+
+    display: none;
+
+}
+
+
+/* =========================================
+   DISEÑO PARA CELULAR
+========================================= */
+
+@media (max-width: 850px) {
+
+
+    /* MENÚ */
+
+    .navbar {
+
+        height: auto;
+
+        min-height: 70px;
+
+        padding: 12px 5%;
+
+        flex-direction: column;
+
+        gap: 10px;
+
+    }
+
+
+    .navbar nav {
+
+        width: 100%;
+
+        justify-content: center;
+
+        flex-wrap: wrap;
+
+    }
+
+
+    .navbar nav a {
+
+        font-size: 0.78rem;
+
+        padding: 7px 9px;
+
+    }
+
+
+    /* SECCIONES */
+
+    .seccion {
+
+        padding:
+            135px 6% 60px;
+
+    }
+
+
+    /* INICIO */
+
+    .hero {
+
+        flex-direction: column;
+
+        text-align: center;
+
+    }
+
+
+    .hero-text p:not(.etiqueta) {
+
+        margin-left: auto;
+
+        margin-right: auto;
+
+    }
+
+
+    .botones {
+
+        justify-content: center;
+
+    }
+
+
+    .hero-image {
+
+        width: min(360px, 90vw);
+
+    }
+
+
+    /* PROYECTOS */
+
+    .proyectos {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    /* HABILIDADES */
+
+    .habilidades {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    /* CONTACTO */
+
+    .contacto {
+
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+
+    }
+
+}
